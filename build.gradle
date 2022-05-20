@@ -27,6 +27,7 @@ allprojects {
         ashleyVersion = '1.7.4'
         aiVersion = '1.8.2'
         gdxControllersVersion = '2.2.1'
+        miniaudioVersion = '0.1-SNAPSHOT'
     }
 
     repositories {
@@ -48,7 +49,7 @@ project(":desktop") {
         implementation project(":core")
         api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        
+        implementation "games.rednblack.miniaudio:miniaudio:$miniaudioVersion:natives-desktop"
     }
 }
 
@@ -64,7 +65,10 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
-        
+        natives "games.rednblack.miniaudio:miniaudio:$miniaudioVersion:natives-armeabi-v7a"
+        natives "games.rednblack.miniaudio:miniaudio:$miniaudioVersion:natives-arm64-v8a"
+        natives "games.rednblack.miniaudio:miniaudio:$miniaudioVersion:natives-x86"
+        natives "games.rednblack.miniaudio:miniaudio:$miniaudioVersion:natives-x86_64"
     }
 }
 
@@ -74,6 +78,6 @@ project(":core") {
 
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+        api "games.rednblack.miniaudio:miniaudio:$miniaudioVersion"
     }
 }
